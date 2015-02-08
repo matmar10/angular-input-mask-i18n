@@ -1555,6 +1555,7 @@ var plans = {
     "US": {
         "countryDialingCode": 1,
         "nationalDialingPrefix": 1,
+        "mask": "(000) 000-0000",
         "format": [
             "^1[0-9]{10}$"
         ]

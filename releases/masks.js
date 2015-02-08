@@ -1,8 +1,8 @@
 /**
  * angular-mask
  * Personalized input masks for AngularJS
- * @version v1.3.1
- * @link http://github.com/assisrafael/angular-input-masks
+ * @version v1.4.0
+ * @link http://github.com/matmar10/angular-input-masks
  * @license MIT
  */
 (function (angular) {
@@ -3304,6 +3304,7 @@ var plans = {
     "US": {
         "countryDialingCode": 1,
         "nationalDialingPrefix": 1,
+        "mask": "(000) 000-0000",
         "format": [
             "^1[0-9]{10}$"
         ]

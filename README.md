@@ -91,9 +91,9 @@ How to use
 
 - Internationalized: Used the currency symbol, decimal separator and thousands separator defined in the client browser configuration.
 
-### ui-br-phone-number ###
+### ui-phone-number ###
 ```html
-<input type="text" name="field" ng-model="phoneNumber" ui-br-phone-number>
+<input type="text" name="field" ng-model="phoneNumber" ui-phone-number="BR">
 ```
 
 ### ui-br-cep-mask ###

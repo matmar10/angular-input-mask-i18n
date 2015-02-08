@@ -121,6 +121,11 @@
 		<span ng-bind="initializedPhoneNumber">-</span> - {{form.initializedPhoneNumber.$error}}<br>
 		<br>
 
+        <h2>ui-phone-number="us"</h2>
+        <input type="text" name="phoneNumber2" ng-model="phoneNumber2" ui-phone-number="us"><br>
+        <span ng-bind="phoneNumber2">-</span> - {{form.phoneNumber2.$error}}<br>
+        <br>
+
 		<h2>ui-br-cep-mask</h2>
 		<input type="text" name="field17" ng-model="initializedCep" ui-br-cep-mask><br>
 		<span ng-bind="initializedCep"></span> - {{form.field17.$error}}<br>

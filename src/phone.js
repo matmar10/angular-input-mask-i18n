@@ -1656,14 +1656,13 @@ angular.module('ui.utils.masks.phone').factory('PhoneValidators', [function() {
 
     function tryToValidate(msisdn, formats) {
         var i, re;
-
         for (i = 0; i < formats.length; i++) {
             re = new RegExp(formats[i]);
             if (re.test(msisdn)) {
+              console.log('MATCHED: ', formats[i]);
                 return true;
             }
         }
-
         return false;
     }
 
@@ -1672,9 +1671,12 @@ angular.module('ui.utils.masks.phone').factory('PhoneValidators', [function() {
             var valid;
             value = value || '';
             value = value.replace(/[^0-9]/g, '');
-            valid = ctrl.$isEmpty(value) || tryToValidate(value, plan) ||
-                tryToValidate(plan.countryDialingCode + value, plan);
-            ctrl.$setValidity(country + '-phone-number', valid);
+
+            // TODO: remove national dialing prefix and try that also
+            valid = ctrl.$isEmpty(value) || tryToValidate(value, plan.format) ||
+              tryToValidate(plan.countryDialingCode + value, plan.format);
+
+            ctrl.$setValidity(country.toLowerCase() + '-phone-number', valid);
             return value;
         };
     }
@@ -1734,23 +1736,25 @@ angular.module('ui.utils.masks.phone').directive('uiPhoneNumber', ['PhoneValidat
             });
 
             ctrl.$parsers.push(function(value) {
+                var cleanValue, formattedValue;
+
                 if (!value) {
                     return value;
                 }
 
-                var cleanValue = clearValue(value);
-                var formatedValue = applyPhoneMask(cleanValue);
+                cleanValue = clearValue(value);
+                formattedValue = applyPhoneMask(cleanValue);
 
-                if (ctrl.$viewValue !== formatedValue) {
-                    ctrl.$setViewValue(formatedValue);
+                if (ctrl.$viewValue !== formattedValue) {
+                    ctrl.$setViewValue(formattedValue);
                     ctrl.$render();
                 }
 
-                return clearValue(formatedValue);
+                return clearValue(formattedValue);
             });
 
             ctrl.$parsers.push(function(value) {
-                return PhoneValidators.brPhoneNumber(ctrl, value);
+                return PhoneValidators[country.toLowerCase() + 'PhoneNumber'](ctrl, value);
             });
         }
     };

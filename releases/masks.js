@@ -1,8 +1,8 @@
 /**
- * angular-mask
+ * angular-input-mask-i18n
  * Personalized input masks for AngularJS
- * @version v1.4.0
- * @link http://github.com/matmar10/angular-input-masks
+ * @version v1.5.0
+ * @link http://github.com/matmar10/angular-input-mask-i18n
  * @license MIT
  */
 (function (angular) {

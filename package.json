@@ -1,13 +1,13 @@
 {
-  "name": "angular-mask",
-  "version": "1.4.1",
+  "name": "angular-input-mask-i18n",
+  "version": "1.5.0",
   "description": "Personalized input masks for AngularJS",
   "main": "mask.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:matmar10/angular-input-masks.git"
+    "url": "git@github.com:matmar10/angular-input-masks-i18n.git"
   },
-  "homepage": "http://github.com/matmar10/angular-input-masks",
+  "homepage": "http://github.com/matmar10/angular-input-mask-i18n",
   "scripts": {
     "test": "gulp test",
     "postinstall": "bower install && gulp build",

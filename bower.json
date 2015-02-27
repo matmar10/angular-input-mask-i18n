@@ -1,8 +1,11 @@
 {
-  "name": "angular-input-masks",
-  "version": "1.4.1",
-  "description": "Personalized and localized input masks for AngularJS",
-  "author": "igor.rafael@gmail.com",
+  "name": "angular-input-mask-i18n",
+  "version": "1.5.0",
+  "description": "Personalized and localized input masks for AngularJS; a fork of angular-mask",
+  "authors": [
+    "igor.rafael@gmail.com",
+    "matthew.mar10@gmail.com"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
